@@ -1,21 +1,32 @@
 package level1;
 
-public class diec2 {public static void main(String[] args) {
-	//6면인 주사위를 5회 굴려서 나온 합계수를 구하시오
-	//(int) (Math.random()*최댓값)+최소값
-	int result = 0;
-	for(int i= 0; i<5; i++) { //5번실행
-	double d = Math.random();
-	int temp = (int)(d*6)+1; //랜덤으로 1-6 정수값
-	System.out.print(temp);
-	result+=temp;
-	}
-	
-	System.out.print("Sum : "+result);
-	
-	//홀수노알때까지 주사위 굴려 합하는 프로그래밍
-	// Random random = new Random();
-	
-}
+import java.util.Random;
 
-}
+public class diec2 {public static void main(String[] args) {
+	// 홀수나올때까지 주사위굴려 합하는 프로그래밍
+	// Random random = new Random();
+	Random random = new Random();
+	double doub = Math.random();
+	int player =  (int)(doub*6)+1;
+	int com = random.nextInt(5)+1;
+	String s = "비김";
+	if(player==com) {
+		}else if(player<com) {
+		s="패배";}
+	else if(player>com) {
+		s="승리";}
+	System.out.print(s);
+	
+	
+	
+	int p2=(int)(Math.random()*6)+1;
+	System.out.println("플레이어 숫자"+p2);
+	int c2= new Random().nextInt(5)+1;
+	System.out.println("컴퓨터 숫자"+c2);
+	String s2 = "비겼다.";
+	if(p2!=com) s = (p2>c2) ? "이겼다." : "졌다.";
+	System.out.println(s2);
+	
+	
+
+}}
